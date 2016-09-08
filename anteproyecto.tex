@@ -1,0 +1,157 @@
+%input macros (i.e. write your own macros file called MacroFile1.tex)
+%\include{Macros/MacroFile1}
+
+ \documentclass[oneside.report,11pt]{Classes/CUEDthesisPSnPDF}
+ 
+
+\ifpdf
+    \pdfinfo { /Title  (Titulo de mi anteproyecto)
+               /Creator (TeX)
+               /Producer (pdfTeX)
+               /Author (Jhon Jairo Alvarez Londoño jjalvarezl@unicauca.edu.co)
+               /CreationDate (D:20140511000000)  %format D:YYYYMMDDhhmmss
+               /ModDate (D:20160901125448)
+               /Subject (De que se trata el anteproyecto)
+               /Keywords (Mi palabra clave 1; Mi palabra clave 2; ...)}
+    \pdfcatalog { /PageMode (/UseOutlines)
+                  /OpenAction (fitbh)  }
+\fi
+
+\title{Titulo de mi anteproyecto}
+
+%\ifpdf
+%  \author{\href{mailto:jhon.jairo.alvarez.londono@hotmail.com}{Jhon Jairo Alvarez Londoño}}
+%  \collegeordept{\href{http://portal.unicauca.edu.co/versionP/acerca-de-unicauca/facultades/facultad-de-ingenieria-electronica-y-telecomunicaciones}{Departmento de Sistemas de la Información}}
+%  \university{\href{http://www.unicauca.edu.co}{Universidad del Cauca}}
+% insert below the file name that contains the crest in-place of 'UnivShield'
+%  \crest{\includegraphics[width=30mm]{EscudoUnicauca}}
+%\else
+
+  %Will display only on the cover page (can be commented / deleted)
+  %\degree{Hola mundo}
+  
+  %Will display on the cover page and as footnote of all pages
+  \author{\href{mailto:jjalvarezl@unicauca.edu.co}{Jhon Jairo Alvarez Londoño}}
+  
+  %Will display only on the cover page
+  \thesistutor {Tutor de la tesis}
+  
+  %Will display only on the cover page (can be commented / deleted)
+  %\thesiscotutor{Codirector de la tesis}
+  
+  %Will display only on the cover page
+  \college{Facultad}
+  
+  %Will display only on the cover page
+  \department{Departamento}%
+  
+  %Will display on the cover page and as footnote of all pages
+  \university{Universidad del Cauca}
+  
+  %Will display only on the cover page
+  \researchgroupcompletename{Nombre del grupo de investigación extendido}
+  
+  %Will display only as footnote of all pages
+  \researchgroupshortname{Nombre acortado del grupo de investigación}
+  
+  %Will display only on the cover page
+  \thesisresearchline{Especialidad de la tesis}
+  
+  %Will display only on the cover page
+  \date{Popayán, \today}
+  
+  %insert below the file name that contains the crest in-place of 'UnivShield'
+  \crest{\includegraphics[viewport = 0 0 292 336, width=30mm]{EscudoUnicauca}}
+%  \crest{\includegraphics[bb = 0 0 292 336, width=30mm]{EscudoUnicauca}}
+%\fi
+%
+% insert below the file name that contains the crest in-place of 'UnivShield'
+% \crest{\IncludeGraphicsW{UnivShield}{40mm}{14 14 73 81}}
+%
+%\renewcommand{\submittedtext}{change the default text here if needed}
+
+
+% turn of those nasty overfull and underfull hboxes
+% \hbadness=10000
+% \hfuzz=50pt
+
+% Put all the style files you want in the directory StyleFiles and usepackage like this:
+%\usepackage{StyleFiles/watermark}
+
+% Comment out the next line to get single spacing
+%\onehalfspacing
+\begin{document}
+\urlstyle{rm}
+%\bstctlcite{IEEEexample:BSTcontrol} % Ver el control "IEEEexample" en el archivo
+% .bib (inhabilita el "----" de los autores repetidos).
+%\language{english}
+
+% A page with the abstract on including title and author etc may be
+% required to be handed in separately. If this is not so, then comment
+% the below 3 lines (between '\begin{abstractseparte}' and 
+% 'end{abstractseparate}'), normally like a declaration ... needs some more
+% work, mind as environment abstracts creates a new page!
+% \begin{abstractseparate}
+%   \input{Abstract/abstract}
+% \end{abstractseparate}
+
+
+
+
+% Using the watermark package which is in StyleFiles/
+% and to remove DRAFT COPY ONLY appearing on the top of all pages comment out below line
+%\watermark{DRAFT COPY ONLY}
+\maketitle
+
+%set the number of sectioning levels that get number and appear in the contents
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\frontmatter % book mode only
+\pagenumbering{roman}
+
+% Uncomment next lines to enable the following 3 sections:
+% \include{Dedication/dedication}
+% \newpage
+% \include{Acknowledgement/acknowledgement}
+% \newpage
+% \include{Abstract/abstract}
+
+\tableofcontents
+\newpage
+% Uncomment next lines to enable list of figures and list of tables
+% \listoffigures
+% \newpage
+% \listoftables
+% \newpage
+
+%\printnomenclature  %% Print the nomenclature
+%\addcontentsline{toc}{chapter}{Nomenclature}
+
+\mainmatter % book mode only
+\setlength{\parskip}{0.2cm} % This command changes the space between
+\input{Introduction/introduction}
+\input{Chapter1/chapter1}
+\input{Chapter2/chapter2}
+\input{Chapter3/chapter3}
+\input{Chapter4/chapter4}
+\input{Chapter5/chapter5}
+\input{Chapter6/chapter6}
+
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{plainnat}
+%\bibliographystyle{Classes/CUEDbiblio}
+%\bibliographystyle{Classes/jmb}
+%\bibliographystyle{Classes/jmb} % bibliography style
+\renewcommand{\bibname}{Bibliografía} % changes default name Bibliography to Bibliografía
+%\bibliography{References/references} % References file
+\bibliography{IEEEabrv,References/references}
+
+\input{actapropiedadintelectual/actapropiedadintelectual}
+
+%\backmatter % book mode only
+\appendix
+\makeatletter
+\renewcommand{\@chapapp}{Anexo} % Si se quita esta linea o la anterior el capitulo no se llamará anexo sino apendice
+\include{Appendix1/appendix1}
+\end{document}
