@@ -17,7 +17,20 @@
                   /OpenAction (fitbh)  }
 \fi
 
-\title{Titulo de mi anteproyecto}
+%Declaring global variables used in other chapters such as actapropiedadintelectual:
+\newcommand{\mytitle}{Titulo de mi anteproyecto}
+\newcommand{\myauthor}{Fulanito}
+\newcommand{\myidauthorcard}{12345}
+\newcommand{\mycoauthor}{Sutanito} % Comment this line if there is no another author
+\newcommand{\myidcoauthorcard}{67890} % Comment this line if there is no another author
+\newcommand{\mythesistutor}{Menganito}
+\newcommand{\myidthesistutorcard}{09876}
+\newcommand{\mythesiscotutor}{Perencejo} % Comment this line if there is no another thesis cotutor
+\newcommand{\myidthesiscotutorcard}{54321} % Comment this line if there is no another thesis cotutor
+\newcommand{\mydepartment}{Departamento}
+\newcommand{\mydegree}{titulo a obtener}
+
+\title{\mytitle}
 
 %\ifpdf
 %  \author{\href{mailto:jhon.jairo.alvarez.londono@hotmail.com}{Jhon Jairo Alvarez Londoño}}
@@ -28,16 +41,19 @@
 %\else
 
   %Will display only on the cover page (can be commented / deleted)
-  %\degree{Hola mundo}
+  \degree{\mydegree}
   
   %Will display on the cover page and as footnote of all pages
-  \author{\href{mailto:jjalvarezl@unicauca.edu.co}{Jhon Jairo Alvarez Londoño}}
+  \author{\href{mailto:jjalvarezl@unicauca.edu.co}{\myauthor}}
+  
+  %Will display on the cover page and as footnote of all pages
+  \coauthor{\href{mailto:jjalvarezl@unicauca.edu.co}{\mycoauthor{}}} % Comment this line if there is no another author
   
   %Will display only on the cover page
-  \thesistutor {Tutor de la tesis}
+  \thesistutor {\mythesistutor{}}
   
   %Will display only on the cover page (can be commented / deleted)
-  %\thesiscotutor{Codirector de la tesis}
+  \thesiscotutor{\mythesiscotutor{}}
   
   %Will display only on the cover page
   \college{Facultad}

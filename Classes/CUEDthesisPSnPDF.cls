@@ -66,6 +66,9 @@
 \usepackage[normalem]{ulem} % Parametro para delineado usado en modificacion de la URL
 \usepackage{footmisc} % Change footnote font.
 \usepackage{titlesec} % Used for change chapter title style
+\usepackage{pgfgantt} % Used for drawing Gantt charts.
+
+
 %Bibliography
 %uncomment next line to change bibliography name to references for Book document class
 \renewcommand{\bibname}{Bibliografía}
@@ -214,7 +217,7 @@
 %\fancyhead[LE]{\bfseries\leftmark}	% Sets the section title in the rigth header and the page is left
 \fancyhead[C]{\@title} % Sets the thesis title in the midle of the header, can make it with \chead{\@title} too
 \fancyfoot[RO]{\@university \\ \@researchgroupshortname} % Sets the author in the left of the foter, can make it with \rfoot{\@university \\ \@researchgroupshortname} too.
-\fancyfoot[LO]{\@author} % Sets the author in the left of the foter, can make it with \lfoot{\@author} too
+\fancyfoot[LO]{\@author \ifdefined\@coauthor \\ \@coauthor \fi} % Sets the author in the left of the foter, can make it with \lfoot{\@author} too
 \fancyfoot[C]{\thepage} % Sets the page numbers in the midle of the foter
 \fancypagestyle{plain}{} % Sets all the pages to the fancy style
 
@@ -232,7 +235,7 @@
 %  \renewcommand{\headrulewidth}{0pt}
 %}
 %\chead{\@title}
-\newcommand{\submittedtext}{{Anteproyecto de Trabajo de Grado}}
+\newcommand{\submittedtext}{{Anteproyecto de Trabajo de Grado para optar el título de}}
 \newcommand{\tutorpreamble}{{\textbf{Director: }}}
 \newcommand{\cotutorpreamble}{{\textbf{Codirector: }}}
 %
@@ -243,6 +246,8 @@
 % construction of the title page and other preamble.
 
 \def\Tiny{ \font\Tinyfont = cmr10 at 3pt \relax  \Tinyfont}
+% Research's coauthor
+\def\coauthor#1{\gdef\@coauthor{#1}}
 % The full (unabbreviated) name of the degree
 \def\degree#1{\gdef\@degree{#1}}
 % Nombre del director
@@ -290,16 +295,17 @@
 \ifdefined\@degree
 	%Si lo está coloquelo
 	{\it {\@degree} \par}
-\else
-	%Si no lo está solamente agregue el espacio que la variable deja
-	{\vspace*{5mm}}
 \fi
 
 
 {\large \vspace*{10mm}}
     {{\Large \@author} \par}
-
-{\large \vspace*{15mm}}
+%¿Está definida la variable \coauthor en el .tex principal?
+\ifdefined\@coauthor
+	%Si lo está coloque el preambulo del tutor y el nombre del tutor
+	{{\Large \@coauthor} \par}
+\fi
+	{\large \vspace*{15mm}}
 	{{\tutorpreamble}\textbf{{\@thesistutor}} \par}
 {\vspace*{0mm}}
 
