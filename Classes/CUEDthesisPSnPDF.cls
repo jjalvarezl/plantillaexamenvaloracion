@@ -67,6 +67,7 @@
 \usepackage{footmisc} % Change footnote font.
 \usepackage{titlesec} % Used for change chapter title style
 \usepackage{pgfgantt} % Used for drawing Gantt charts.
+\usepackage{cite} % Used for change cite stile to [a-b]
 
 
 %Bibliography
