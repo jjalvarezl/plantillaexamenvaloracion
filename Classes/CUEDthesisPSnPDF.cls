@@ -68,6 +68,7 @@
 \usepackage{titlesec} % Used for change chapter title style
 \usepackage{pgfgantt} % Used for drawing Gantt charts.
 \usepackage{cite} % Used for change cite stile to [a-b]
+\usepackage{refcheck} %Used for show the references' keys (dont forget comment on a release or final version). 
 
 
 %Bibliography
