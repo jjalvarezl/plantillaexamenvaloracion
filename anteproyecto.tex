@@ -96,6 +96,10 @@
 
 % Comment out the next line to get single spacing
 %\onehalfspacing
+%Following line adds "BORRADOR" as watermark text behind main text
+\newwatermark[allpages,color=red!30,angle=45,scale=3,xpos=0,ypos=0]{BORRADOR}
+%Following line adds "BORRADOR" as watermark text in front of main text
+%\newwatermark*[allpages,color=red!30,angle=45,scale=3,xpos=0,ypos=0]{BORRADOR}
 \begin{document}
 \nocite{*} %Used for showing references that are not beeing used in references (they are between "?" symbols). Dont forget to coment this and also the "refcheck" package too in the .cls file.
 \urlstyle{rm}

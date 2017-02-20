@@ -47,7 +47,7 @@
 \usepackage{multirow}
 \usepackage{eucal}
 \usepackage[spanish,mexico]{babel}
-\usepackage[usenames, dvipsnames]{color}
+\usepackage[usenames, dvipsnames]{xcolor}
 \usepackage[perpage]{footmisc}
 %\usepackage[square, sort, numbers, authoryear]{natbib}
 \usepackage{ifthen}
@@ -61,15 +61,13 @@
 \usepackage{anyfontsize} %Cambiar el tamaño del nombre de la universidad en la portada (tamaño 20)
 \usepackage{pdfpages} % Paquete para ingersar pdf en el documento final. 
 \usepackage{booktabs} % Paquete utilizado para modificar estilos de tabla como grosor de linea etc.
-\usepackage[usenames]{color} %cambio de color de texto
-\usepackage{xcolor} % Color de texto de url por href
 \usepackage[normalem]{ulem} % Parametro para delineado usado en modificacion de la URL
 \usepackage{footmisc} % Change footnote font.
 \usepackage{titlesec} % Used for change chapter title style
 \usepackage{pgfgantt} % Used for drawing Gantt charts.
 \usepackage{cite} % Used for change cite stile to [a-b]
 \usepackage{refcheck} %Used for show the references' keys (dont forget comment on a release or final version). 
-
+\usepackage[printwatermark]{xwatermark} %Used for set watermarks on document
 
 %Bibliography
 %uncomment next line to change bibliography name to references for Book document class
