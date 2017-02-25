@@ -46,6 +46,7 @@ acs-*.bib
 
 # beamer
 *.nav
+*.toc
 *.snm
 *.vrb
 
