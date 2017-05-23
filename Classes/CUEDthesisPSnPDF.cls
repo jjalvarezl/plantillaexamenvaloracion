@@ -235,7 +235,7 @@
 %  \renewcommand{\headrulewidth}{0pt}
 %}
 %\chead{\@title}
-\newcommand{\submittedtext}{{Anteproyecto de Trabajo de Grado para optar el título de}}
+\newcommand{\submittedtext}{{Examen de valoración para optar el título de}}
 \newcommand{\tutorpreamble}{{\textbf{Director: }}}
 \newcommand{\cotutorpreamble}{{\textbf{Codirector: }}}
 %
